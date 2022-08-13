@@ -1,0 +1,3 @@
+#!/bin/sh
+rm -rf ./User
+cp -R ~/Library/Application\ Support/Sublime\ Text/Packages/User ./User

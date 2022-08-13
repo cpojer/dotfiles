@@ -1,0 +1,33 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Licht.tmTheme",
+	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.orig",
+		"node_modules/*/node_modules",
+		"*.min.js",
+		".haste_cache/*"
+	],
+	"find_selected_text": true,
+	"fold_buttons": false,
+	"font_face": "Fira Code",
+	"font_size": 13,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"rulers":
+	[
+		80
+	],
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"theme": "auto",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"dark_theme": "Adaptive.sublime-theme",
+	"light_theme": "Adaptive.sublime-theme",
+}

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -x
+
+sublime_dir=~/Library/Application\ Support/Sublime\ Text/Packages
+ln -s "$PWD/User" "$sublime_dir"
+mkdir "$sublime_dir/Color Scheme - Default"
+cp *.tmTheme "$sublime_dir/Color Scheme - Default/"
+
+echo "Now please install Package Control: https://sublime.wbond.net/installation"

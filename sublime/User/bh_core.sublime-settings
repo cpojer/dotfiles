@@ -1,0 +1,14 @@
+{
+  "bracket_styles": {
+    "default": {
+      "icon": "none",
+      "color": "bracket.default",
+      "style": "solid"
+    },
+    "tag": {
+      "icon": "none",
+      "color": "bracket.tag",
+      "style": "outline"
+    }
+  }
+}

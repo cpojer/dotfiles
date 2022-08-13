@@ -1,0 +1,142 @@
+{
+  "AllAutocomplete.updateOnlyOnSave": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.folding": false,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggest.localityBonus": true,
+  "editor.tabSize": 2,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "’": true,
+    "‹": true,
+    "›": true
+  },
+  "emmet.showExpandedAbbreviation": "never",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true
+  },
+  "gitlens.codeLens.enabled": false,
+  "javascript.validate.enable": false,
+  "telemetry.telemetryLevel": 0,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.startupEditor": "newUntitledFile",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.minimap.enabled": false,
+  "editor.accessibilitySupport": "off",
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Licht Theme",
+  "livePreview.autoRefreshPreview": "Never",
+  "[mdx]": {
+    "editor.wordWrap": "on"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gremlins.characters": {
+    "2013": {
+      "description": "en dash",
+      "level": "none"
+    },
+    "2018": {
+      "description": "left single quotation mark",
+      "level": "none"
+    },
+    "2019": {
+      "description": "right single quotation mark",
+      "level": "none"
+    },
+    "2029": {
+      "zeroWidth": true,
+      "description": "paragraph separator",
+      "level": "error"
+    },
+    "0003": {
+      "description": "end of text",
+      "level": "warning"
+    },
+    "000b": {
+      "description": "line tabulation",
+      "level": "warning"
+    },
+    "00a0": {
+      "description": "non breaking space",
+      "level": "info"
+    },
+    "00ad": {
+      "description": "soft hyphen",
+      "level": "info"
+    },
+    "200b": {
+      "zeroWidth": true,
+      "description": "zero width space",
+      "level": "error"
+    },
+    "200c": {
+      "zeroWidth": true,
+      "description": "zero width non-joiner",
+      "level": "warning"
+    },
+    "200e": {
+      "zeroWidth": true,
+      "description": "left-to-right mark",
+      "level": "error"
+    },
+    "201c": {
+      "description": "left double quotation mark",
+      "level": "none"
+    },
+    "201d": {
+      "description": "right double quotation mark",
+      "level": "none"
+    },
+    "202c": {
+      "zeroWidth": true,
+      "description": "pop directional formatting",
+      "level": "error"
+    },
+    "202d": {
+      "zeroWidth": true,
+      "description": "left-to-right override",
+      "level": "error"
+    },
+    "202e": {
+      "zeroWidth": true,
+      "description": "right-to-left override",
+      "level": "error"
+    },
+    "fffc": {
+      "zeroWidth": true,
+      "description": "object replacement character",
+      "level": "error"
+    }
+  }
+}

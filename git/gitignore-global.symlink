@@ -1,0 +1,9 @@
+.dropboxignore
+.DS_Store
+.pbxproj
+.Spotlight-V100
+.Trashes
+.vscode/ipch/
+.xcscheme
+.xcworkspacedata
+npm-debug.log

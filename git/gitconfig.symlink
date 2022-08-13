@@ -1,0 +1,58 @@
+[alias]
+  st = status
+  amend = commit --amend --no-edit
+  a = commit --amend --no-edit
+  co = checkout
+  br = branch
+  cp = cherry-pick
+  rb = pull --rebase
+  rbu = pull --rebase upstream main
+  g = graph
+  graph = log --all --decorate --oneline --graph
+  logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
+  logf = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate --numstat
+[color]
+  ui = true
+[core]
+  excludesfile = ~/.gitignore-global
+  autocrlf = input
+  pager = delta
+[log]
+  date = relative
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+[remote "origin"]
+  prune = true
+[init]
+  defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  light = true
+  side-by-side = true
+  file-style = "bold #111111"
+  file-decoration-style = "#111111 ul"
+  grep-file-style = "bold #111111"
+  grep-line-number-style = "#adadad"
+  hunk-header-decoration-style = "#adadad ul ol"
+  hunk-header-line-number-style = "#111111"
+  line-numbers = true
+  line-numbers-left-style = "#adadad"
+  line-numbers-right-style = "#adadad"
+  line-numbers-zero-style = "#adadad"
+  navigate = true
+  syntax-theme = Licht
+  tabs = 2
+  map-styles = \
+   bold purple => syntax "#feecf7", \
+   bold blue => syntax "#e5dff6", \
+   bold cyan => syntax "#d8fdf6", \
+   bold yellow => syntax "#f4ffe0"
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
+[add.interactive]
+    useBuiltin = false

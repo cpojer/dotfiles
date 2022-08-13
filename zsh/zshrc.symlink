@@ -1,0 +1,31 @@
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.home
+
+# your project folder that we can `c [tab]` to
+export PROJECTS=~/Projects
+
+# Load and run compinit
+autoload -U compinit
+compinit -i
+
+# source every .zsh file in this rep
+for config_file ($ZSH/**/*.zsh) source $config_file
+
+# Vim Bindings
+bindkey -e
+
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL=
+
+setopt HIST_IGNORE_DUPS
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+

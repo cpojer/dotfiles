@@ -1,0 +1,7 @@
+alias g="git"
+alias gs="git st"
+alias gd="git diff"
+alias gbr="git br"
+alias gco="git co"
+alias glogo="git logo"
+alias glogf="git logf"

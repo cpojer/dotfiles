@@ -1,0 +1,10 @@
+config.symlink/configstore/
+config.symlink/fish/fishd.*
+config.symlink/grammarly-languageserver/*/com.grammarly.plugin.refresh_token
+config.symlink/simple-update-notifier/
+config.symlink/yarn
+sublime3/User/Package\ Control.cache
+sublime3/User/Package\ Control.last-run
+vscode/User/globalStorage
+vscode/User/History/
+vscode/User/workspaceStorage
