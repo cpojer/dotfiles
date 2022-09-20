@@ -12,7 +12,8 @@
   "editor.unicodeHighlight.allowedCharacters": {
     "’": true,
     "‹": true,
-    "›": true
+    "›": true,
+    "–": true
   },
   "emmet.showExpandedAbbreviation": "never",
   "explorer.confirmDelete": false,
@@ -27,7 +28,7 @@
   },
   "gitlens.codeLens.enabled": false,
   "javascript.validate.enable": false,
-  "telemetry.telemetryLevel": 0,
+  "telemetry.telemetryLevel": "off",
   "workbench.editor.enablePreview": false,
   "workbench.editor.untitled.hint": "hidden",
   "workbench.startupEditor": "newUntitledFile",
@@ -52,6 +53,9 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.minimap.enabled": false,
   "editor.accessibilitySupport": "off",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Licht Theme",
+  "workbench.preferredDarkColorTheme": "Dunkel Theme",
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Licht Theme",
   "livePreview.autoRefreshPreview": "Never",

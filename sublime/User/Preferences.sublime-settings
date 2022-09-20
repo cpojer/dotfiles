@@ -1,5 +1,6 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Licht.tmTheme",
+	"caret_style": "smooth",
+	"color_scheme": "auto",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
@@ -30,4 +31,6 @@
 	"trim_trailing_white_space_on_save": true,
 	"dark_theme": "Adaptive.sublime-theme",
 	"light_theme": "Adaptive.sublime-theme",
+	"dark_color_scheme": "Packages/Color Scheme - Default/Dunkel.tmTheme",
+	"light_color_scheme": "Packages/Color Scheme - Default/Licht.tmTheme",
 }

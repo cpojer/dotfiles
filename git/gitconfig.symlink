@@ -16,11 +16,12 @@
 [core]
   excludesfile = ~/.gitignore-global
   autocrlf = input
-  pager = delta
+  pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dunkel-theme || echo licht-theme)"
 [log]
   date = relative
 [push]
   default = current
+	autoSetupRemote = true
 [branch]
   autosetuprebase = always
 [remote "origin"]
@@ -29,7 +30,7 @@
   defaultBranch = main
 [interactive]
   diffFilter = delta --color-only
-[delta]
+[delta "licht-theme"]
   light = true
   side-by-side = true
   file-style = "bold #111111"
@@ -50,9 +51,25 @@
    bold blue => syntax "#e5dff6", \
    bold cyan => syntax "#d8fdf6", \
    bold yellow => syntax "#f4ffe0"
+[delta "dunkel-theme"]
+  light = false
+  side-by-side = true
+  file-style = "bold #c8c8c8"
+  file-decoration-style = "#c8c8c8 ul"
+  grep-file-style = "bold #c8c8c8"
+  grep-line-number-style = "#adadad"
+  hunk-header-decoration-style = "#adadad ul ol"
+  hunk-header-line-number-style = "#c8c8c8"
+  line-numbers = true
+  line-numbers-left-style = "#adadad"
+  line-numbers-right-style = "#adadad"
+  line-numbers-zero-style = "#adadad"
+  navigate = true
+  syntax-theme = Dunkel
+  tabs = 2
 [merge]
   conflictstyle = diff3
 [diff]
   colorMoved = default
 [add.interactive]
-    useBuiltin = false
+  useBuiltin = false

@@ -1,4 +1,4 @@
-set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt $HOME/.home/bin /usr/local/sbin $HOME/.cargo/bin $PATH
+set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $HOME/.home/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin $HOME/.cargo/bin $PATH
 set -Ux EDITOR vim
 source ~/.iterm2_shell_integration.fish
 
@@ -25,10 +25,6 @@ if type -q exa
   abbr --add ls 'exa -a --icons --no-user --no-time'
   abbr --add l 'exa -al --icons --no-user --no-time'
   abbr --add lt 'exa -al --icons --no-user --no-time --tree -L2'
-end
-
-if type -q bat
-  abbr --add cat bat
 end
 
 set fish_color_cwd '3d87f5'
