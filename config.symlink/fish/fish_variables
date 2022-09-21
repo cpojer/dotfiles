@@ -20,9 +20,7 @@ SETUVAR _fish_abbr_glogo:git\x20logo
 SETUVAR _fish_abbr_gp:git\x20push\x20origin
 SETUVAR _fish_abbr_gpu:git\x20push\x20upstream
 SETUVAR _fish_abbr_gs:git\x20status
-SETUVAR _fish_abbr_l:exa\x20\x2dal\x20\x2d\x2dicons\x20\x2d\x2dno\x2duser\x20\x2d\x2dno\x2dtime
-SETUVAR _fish_abbr_ls:exa\x20\x2da\x20\x2d\x2dicons\x20\x2d\x2dno\x2duser\x20\x2d\x2dno\x2dtime
-SETUVAR _fish_abbr_lt:exa\x20\x2dal\x20\x2d\x2dicons\x20\x2d\x2dno\x2duser\x20\x2d\x2dno\x2dtime\x20\x2d\x2dtree\x20\x2dL2
+SETUVAR _fish_abbr_l:ls\x20\x2dalh
 SETUVAR _fish_abbr_map:xargs\x20\x2dn1
 SETUVAR _fish_abbr_nsize:du\x20\x2dsh\x20\x2e/node_modules/\x2a\x20\x7c\x20sort\x20\x2dnr\x20\x7c\x20grep\x20\x22\x5cdM\x2e\x2a\x22
 SETUVAR _fish_abbr_o:open

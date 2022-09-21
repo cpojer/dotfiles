@@ -21,12 +21,6 @@ abbr --add map 'xargs -n1'
 abbr --add nsize 'du -sh ./node_modules/* | sort -nr | grep "\dM.*"'
 abbr --add p 'pnpm'
 
-if type -q exa
-  abbr --add ls 'exa -a --icons --no-user --no-time'
-  abbr --add l 'exa -al --icons --no-user --no-time'
-  abbr --add lt 'exa -al --icons --no-user --no-time --tree -L2'
-end
-
 set fish_color_cwd '3d87f5'
 set fish_color_search_match --background='C2E8FF'
 set fish_color_escape 4271ae
