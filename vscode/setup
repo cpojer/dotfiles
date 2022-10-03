@@ -5,7 +5,9 @@ set -x
 vscode_dir=~/Library/Application\ Support/Code
 ln -s "$PWD/User" "$vscode_dir/User"
 
+code --install-extension adpyke.codesnap
 code --install-extension Atishay-Jain.All-Autocomplete
+code --install-extension bradlc.vscode-tailwindcss
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension cnakazawa.dunkel-theme
 code --install-extension cnakazawa.licht-theme
@@ -23,5 +25,6 @@ code --install-extension Prisma.prisma
 code --install-extension rust-lang.rust-analyzer
 code --install-extension silvenon.mdx
 code --install-extension svelte.svelte-vscode
+code --install-extension usernamehw.errorlens
 code --install-extension ziyasal.vscode-open-in-github
 code --install-extension znck.grammarly
