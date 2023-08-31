@@ -3,12 +3,13 @@ set -Ux EDITOR vim
 source ~/.iterm2_shell_integration.fish
 
 abbr --add am 'git amend'
-abbr --add o 'open'
+abbr --add o 'open .'
 abbr --add g 'git'
 abbr --add gbr 'git br'
 abbr --add gco 'git co'
 abbr --add gd 'git diff -w'
 abbr --add gds 'git diff -w --staged'
+abbr --add grs 'git restore --staged'
 abbr --add glogf 'git logf'
 abbr --add glogo 'git logo'
 abbr --add gp 'git push origin'

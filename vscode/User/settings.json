@@ -7,6 +7,7 @@
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": false, // This is buggy, use the 'Auto Rename Tag' extension instead.
   "editor.suggest.localityBonus": true,
   "editor.tabSize": 2,
   "editor.unicodeHighlight.allowedCharacters": {
@@ -22,7 +23,7 @@
   "files.trimFinalNewlines": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
+    "yaml": true,
     "plaintext": true,
     "markdown": true
   },
@@ -142,5 +143,32 @@
       "description": "object replacement character",
       "level": "error"
     }
-  }
+  },
+  "errorLens.excludeBySource": [
+    "eslint(@typescript-eslint/ban-types)",
+    "eslint(@typescript-eslint/no-empty-function)",
+    "eslint(@typescript-eslint/no-unused-vars)",
+    "eslint(arrow-parens)",
+    "eslint(no-console)",
+    "eslint(no-empty-pattern)",
+    "eslint(no-empty)",
+    "eslint(semi)",
+    "ts(6133)",
+    "Grammarly"
+  ],
+  "errorLens.exclude": ["^Correct your spelling$", "^Change the spelling$"],
+  "workbench.layoutControl.enabled": false,
+  "prettier.singleQuote": true,
+  "mdx.experimentalLanguageServer": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorBlinking": "phase",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.autoSaveDelay": 50,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.plusFeatures.enabled": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "typescript.reportStyleChecksAsWarnings": false,
+  "cody.inlineChat.enabled": false,
+  "files.autoSave": "afterDelay"
 }
