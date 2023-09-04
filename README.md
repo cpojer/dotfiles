@@ -1,3 +1,7 @@
+# `cpojer/dotfiles`
+
+Check out [The Perfect Development Environment](https://cpojer.net/posts/the-perfect-development-environment).
+
 ## KeyBindings
 
 Move folder to `~/Library/Application Support` to avoid alt-space spitting out non-breaking spaces when using German or other keyboard layouts.
