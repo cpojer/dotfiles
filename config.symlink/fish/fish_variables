@@ -10,7 +10,6 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_am:git\x20amend
 SETUVAR _fish_abbr_c:code\x20\x2e
 SETUVAR _fish_abbr_g:git
-SETUVAR _fish_abbr_gb:git\x20br\x20cnakazawa/
 SETUVAR _fish_abbr_gbr:git\x20br
 SETUVAR _fish_abbr_gco:git\x20co
 SETUVAR _fish_abbr_gd:git\x20diff\x20\x2dw
