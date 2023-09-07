@@ -1,3 +1,3 @@
-function l --description 'Use exa instead of ls'
-  exa -al --icons --no-user --no-time $argv
+function l --description 'Use eza instead of ls'
+  eza -al --icons --no-user --no-time $argv
 end
