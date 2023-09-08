@@ -162,6 +162,7 @@
   "mdx.experimentalLanguageServer": true,
   "editor.stickyScroll.enabled": true,
   "editor.cursorBlinking": "phase",
+  "editor.gotoLocation.multipleDefinitions": "goto",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.autoSaveDelay": 50,
   "gitlens.showWhatsNewAfterUpgrades": false,
@@ -169,6 +170,5 @@
   "gitlens.plusFeatures.enabled": false,
   "github.copilot.editor.enableCodeActions": false,
   "typescript.reportStyleChecksAsWarnings": false,
-  "cody.inlineChat.enabled": false,
   "files.autoSave": "afterDelay"
 }
