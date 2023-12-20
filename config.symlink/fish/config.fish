@@ -1,4 +1,4 @@
-set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $HOME/.home/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin $HOME/.cargo/bin $PATH
+fish_add_path /opt/homebrew/bin /opt/homebrew/sbin "$HOME/.home/bin" /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin "$HOME/.cargo/bin"
 set -Ux EDITOR vim
 source ~/.iterm2_shell_integration.fish
 
