@@ -114,7 +114,6 @@ install_dotfiles () {
 install_dotfiles
 
 sudo mkdir -p /usr/local/bin
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/sp1thas/dropboxignore/master/utils/install.sh)" c
 
 echo ''
 echo '  All installed!'
