@@ -1,0 +1,6 @@
+command = /opt/homebrew/bin/fish
+theme = light:Licht,dark:Dunkel
+font-family = "Fira Code"
+font-size = 12
+copy-on-select = true
+#keybind = global:ctrl+y=toggle_visibility
