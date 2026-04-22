@@ -1,4 +1,8 @@
 Brewfile.lock.json
+alfred/Alfred.alfredpreferences/**/.DS_Store
+alfred/Alfred.alfredpreferences/**/*.alfdb
+alfred/Alfred.alfredpreferences/**/*[Ll]icense*
+alfred/Alfred.alfredpreferences/**/*[Pp]owerpack*
 config.symlink/configstore/
 config.symlink/fish/fishd.*
 config.symlink/fish/functions/ac-proxy.fish

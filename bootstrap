@@ -113,7 +113,7 @@ install_dotfiles () {
 
 install_dotfiles
 
-sudo mkdir -p /usr/local/bin
+"$DOTFILES_ROOT/macos/setup"
 
 echo ''
 echo '  All installed!'

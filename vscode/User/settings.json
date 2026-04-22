@@ -188,10 +188,7 @@
   "editor.inlineSuggest.edits.allowCodeShifting": "never",
   "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
   "oxc.enable.oxfmt": true,
-  "[jsonc]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace"
-  },
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.nextEditSuggestions.fixes": false,
 }

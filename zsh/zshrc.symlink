@@ -25,7 +25,18 @@ export LC_ALL=
 
 setopt HIST_IGNORE_DUPS
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+export EDITOR="nvim"
+export VISUAL="nvim"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="$HOME/.local/bin:$PATH"
 
+if [ -d "$HOME/.cargo/bin" ]; then
+  path=("$HOME/.cargo/bin" ${path:#$HOME/.cargo/bin})
+fi

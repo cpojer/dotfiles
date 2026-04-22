@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$(uname)" != "Darwin" ]; then
+  exit 0
+fi
+
+MACOS_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+DOTFILES_ROOT=$(cd "$MACOS_ROOT/.." && pwd -P)
+
+echo ''
+echo '  Applying macOS settings...'
+
+# Faster emoji picker and window transitions.
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Developer-friendly text entry.
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticInlinePredictionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
+
+# Global UI preferences.
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false
+defaults write NSGlobalDomain com.apple.sound.beep.volume -float 0
+defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
+
+# Dock.
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock tilesize -int 70
+defaults write com.apple.dock largesize -int 80
+defaults write com.apple.dock show-recents -bool false
+
+# Finder.
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder FXPreferredViewStyle -string clmv
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+defaults write com.apple.finder NewWindowTarget -string PfHm
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+defaults write com.apple.finder FXICloudDriveDesktop -bool false
+defaults write com.apple.finder FXICloudDriveDocuments -bool false
+
+# Trackpad. Apply both built-in and Bluetooth domains so new hardware behaves the same.
+for domain in com.apple.AppleMultitouchTrackpad com.apple.driver.AppleBluetoothMultitouch.trackpad; do
+  defaults write "$domain" Clicking -bool false
+  defaults write "$domain" Dragging -bool false
+  defaults write "$domain" DragLock -bool false
+  defaults write "$domain" TrackpadRightClick -bool true
+  defaults write "$domain" TrackpadThreeFingerDrag -bool false
+  defaults write "$domain" TrackpadThreeFingerTapGesture -int 2
+  defaults write "$domain" TrackpadTwoFingerDoubleTapGesture -int 1
+  defaults write "$domain" TrackpadTwoFingerFromRightEdgeSwipeGesture -int 3
+  defaults write "$domain" TrackpadMomentumScroll -bool true
+  defaults write "$domain" TrackpadScroll -bool true
+  defaults write "$domain" TrackpadHorizScroll -bool true
+  defaults write "$domain" TrackpadPinch -bool true
+  defaults write "$domain" TrackpadRotate -bool true
+done
+
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 1
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.scrollBehavior -int 2
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerDragGesture -bool false
+
+# Stage Manager and macOS window tiling.
+defaults write com.apple.WindowManager GloballyEnabled -bool false
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+defaults write com.apple.WindowManager StageManagerHideWidgets -bool false
+defaults write com.apple.WindowManager StandardHideWidgets -bool false
+
+# Screenshots and menu bar clock.
+defaults write com.apple.screencapture show-thumbnail -bool false
+defaults write com.apple.menuextra.clock ShowAMPM -bool true
+defaults write com.apple.menuextra.clock ShowDate -bool false
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+defaults write com.apple.menuextra.clock TimeAnnouncementsEnabled -bool false
+
+# Avoid Option-Space inserting a non-breaking space on layouts such as Austrian/German.
+mkdir -p "$HOME/Library/KeyBindings"
+ln -sf "$DOTFILES_ROOT/KeyBindings/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+
+killall Dock Finder SystemUIServer cfprefsd 2>/dev/null || true
+
+echo '  macOS settings applied.'

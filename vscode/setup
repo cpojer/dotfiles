@@ -1,45 +1,25 @@
-#!/bin/sh
-# Setup a machine for VSCode
-set -x
+#!/usr/bin/env bash
 
-vscode_dir=~/Library/Application\ Support/Code
-ln -s "$PWD/User" "$vscode_dir/User"
+set -euo pipefail
 
-code --install-extension adpyke.codesnap
-code --install-extension atishay-jain.all-autocomplete
-code --install-extension bradlc.vscode-tailwindcss
-code --install-extension cardinal90.multi-cursor-case-preserve
-code --install-extension christian-kohler.npm-intellisense
-code --install-extension cnakazawa.dunkel-theme
-code --install-extension cnakazawa.licht-theme
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension docker.docker
-code --install-extension eamodio.gitlens
-code --install-extension formulahendry.auto-rename-tag
-code --install-extension github.copilot
-code --install-extension github.copilot-chat
-code --install-extension github.vscode-github-actions
-code --install-extension graphql.vscode-graphql
-code --install-extension graphql.vscode-graphql-syntax
-code --install-extension johnsoncodehk.vscode-code-spotlight
-code --install-extension markosth09.color-picker
-code --install-extension mathiasfrohlich.kotlin
-code --install-extension meta.relay
-code --install-extension mikestead.dotenv
-code --install-extension mrmlnc.vscode-duplicate
-code --install-extension ms-azuretools.vscode-containers
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-vscode-remote.remote-containers
-code --install-extension ms-vscode.live-server
-code --install-extension nhoizey.gremlins
-code --install-extension oxc.oxc-vscode
-code --install-extension prisma.prisma
-code --install-extension rust-lang.rust-analyzer
-code --install-extension styled-components.vscode-styled-components
-code --install-extension sysoev.vscode-open-in-github
-code --install-extension tamasfe.even-better-toml
-code --install-extension typescriptteam.native-preview
-code --install-extension unifiedjs.vscode-mdx
-code --install-extension usernamehw.errorlens
-code --install-extension vunguyentuan.vscode-css-variables
-code --install-extension wix.vscode-import-cost
+VSCODE_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+source_path="$VSCODE_ROOT/User"
+target_path="$HOME/Library/Application Support/Code/User"
+
+mkdir -p "$(dirname "$target_path")"
+
+if [ -L "$target_path" ]; then
+  if [ "$(readlink "$target_path")" = "$source_path" ]; then
+    echo "VS Code settings already linked."
+    exit 0
+  fi
+
+  rm "$target_path"
+elif [ -e "$target_path" ]; then
+  backup_path="${target_path}.backup.$(date +%Y%m%d%H%M%S)"
+  mv "$target_path" "$backup_path"
+  echo "Moved existing VS Code User folder to $backup_path"
+fi
+
+ln -s "$source_path" "$target_path"
+echo "Linked VS Code settings."

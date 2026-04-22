@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! command -v brew >/dev/null 2>&1; then
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+fi
+
+if ! command -v brew >/dev/null 2>&1; then
+  echo 'Homebrew is not installed yet. Run ./homebrew first.'
+  exit 1
+fi
+
+fish_path="$(brew --prefix)/bin/fish"
+fish_listed=false
+
+if [ ! -x "$fish_path" ]; then
+  echo "Fish is not installed at $fish_path. Run ./homebrew first."
+  exit 1
+fi
+
+if grep -Fxq "$fish_path" /etc/shells; then
+  fish_listed=true
+  echo "$fish_path is already listed in /etc/shells."
+else
+  echo "$fish_path is not listed in /etc/shells."
+  if [ -t 0 ]; then
+    read -r -p 'Add it with sudo now? [y/N] ' answer
+    case "$answer" in
+      y|Y|yes|YES)
+        echo "$fish_path" | sudo tee -a /etc/shells >/dev/null
+        fish_listed=true
+        ;;
+    esac
+  fi
+
+  if [ "$fish_listed" = false ]; then
+    echo "Run: echo '$fish_path' | sudo tee -a /etc/shells"
+  fi
+fi
+
+if [ "${SHELL:-}" != "$fish_path" ] && [ "$fish_listed" = true ]; then
+  chsh -s "$fish_path" || echo "Run: chsh -s '$fish_path'"
+elif [ "${SHELL:-}" != "$fish_path" ]; then
+  echo "Run after updating /etc/shells: chsh -s '$fish_path'"
+else
+  echo 'Fish is already the login shell.'
+fi
+
+if "$fish_path" -lc 'type -q fisher'; then
+  "$fish_path" -lc 'fisher update'
+else
+  echo 'Fisher is not available yet; open a new fish shell after dotfiles are linked, then rerun ./fish/setup.'
+fi

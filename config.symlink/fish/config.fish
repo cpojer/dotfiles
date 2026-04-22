@@ -1,9 +1,21 @@
 set -Ux ANDROID_HOME $HOME/Library/Android/sdk
 set -Ux JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
 set -Ux PNPM_HOME $HOME/Library/pnpm
-set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $HOME/.home/bin $PNPM_HOME /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin $HOME/.cargo/bin $ANDROID_HOME/emulator $ANDROID_HOME/platform-tools $HOME/.bun/bin $PATH
-set -Ux EDITOR vim
-source ~/.iterm2_shell_integration.fish
+set -gx PATH $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/sbin $PNPM_HOME /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt /usr/local/sbin $ANDROID_HOME/emulator $ANDROID_HOME/platform-tools $HOME/.bun/bin $PATH
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
+
+alias vi nvim
+alias vim nvim
+alias vimdiff 'nvim -d'
+
+if status is-interactive
+    if set -q SSH_CONNECTION; and not set -q TMUX
+        if command -sq tmux
+            tmux new-session -A -s main
+        end
+    end
+end
 
 abbr --add am 'git amend'
 abbr --add o 'open .'
@@ -26,6 +38,7 @@ abbr --add p 'pnpm'
 abbr --add ghpr 'gh pr checkout'
 abbr --add qgit 'git'
 abbr --add qpnpm 'pnpm'
+abbr --add vpr 'vp run'
 
 set fish_color_cwd '3d87f5'
 set fish_color_search_match --background='C2E8FF'

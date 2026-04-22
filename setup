@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DOTFILES_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+
+load_homebrew() {
+  local brew_bin=
+
+  if command -v brew >/dev/null 2>&1; then
+    brew_bin=$(command -v brew)
+  elif [ -x /opt/homebrew/bin/brew ]; then
+    brew_bin=/opt/homebrew/bin/brew
+  elif [ -x /usr/local/bin/brew ]; then
+    brew_bin=/usr/local/bin/brew
+  fi
+
+  if [ -n "$brew_bin" ]; then
+    eval "$("$brew_bin" shellenv)"
+  fi
+}
+
+run_step() {
+  local name=$1
+  local command=$2
+
+  if [ ! -x "$command" ]; then
+    return
+  fi
+
+  echo ''
+  echo "==> $name"
+  (cd "$DOTFILES_ROOT" && "$command")
+}
+
+run_step "Dotfiles and macOS settings" "$DOTFILES_ROOT/bootstrap"
+run_step "VS Code settings" "$DOTFILES_ROOT/vscode/setup"
+run_step "Homebrew bundle" "$DOTFILES_ROOT/homebrew"
+load_homebrew
+run_step "Fish shell" "$DOTFILES_ROOT/fish/setup"
+
+echo ''
+echo 'Setup complete.'

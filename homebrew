@@ -1,11 +1,48 @@
 #!/usr/bin/env bash
 
-if test ! $(which brew); then
-    echo "Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/cpojer/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+set -euo pipefail
+
+DOTFILES_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+
+find_brew() {
+  if command -v brew >/dev/null 2>&1; then
+    command -v brew
+  elif [ -x /opt/homebrew/bin/brew ]; then
+    echo /opt/homebrew/bin/brew
+  elif [ -x /usr/local/bin/brew ]; then
+    echo /usr/local/bin/brew
+  fi
+}
+
+brew_bin=$(find_brew || true)
+
+if [ -z "$brew_bin" ]; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew_bin=$(find_brew || true)
+fi
+
+if [ -z "$brew_bin" ]; then
+  echo "Homebrew installation finished, but brew was not found."
+  exit 1
+fi
+
+eval "$("$brew_bin" shellenv)"
+
+shellenv_line="eval \"\$($brew_bin shellenv)\""
+if [ ! -f "$HOME/.zprofile" ] || ! grep -Fxq "$shellenv_line" "$HOME/.zprofile"; then
+  {
+    echo
+    echo "$shellenv_line"
+  } >> "$HOME/.zprofile"
+fi
+
+cargo_env_line='test -f "$HOME/.cargo/env" && . "$HOME/.cargo/env"'
+if [ ! -f "$HOME/.zprofile" ] || ! grep -Fxq "$cargo_env_line" "$HOME/.zprofile"; then
+  {
+    echo "$cargo_env_line"
+  } >> "$HOME/.zprofile"
 fi
 
 brew update
-brew bundle
+brew bundle --file "$DOTFILES_ROOT/Brewfile"

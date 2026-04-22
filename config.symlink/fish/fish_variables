@@ -1,49 +1,26 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:vim
+SETUVAR --export ANDROID_HOME:/Users/cpojer/Library/Android/sdk
+SETUVAR --export EDITOR:nvim
+SETUVAR --export JAVA_HOME:/Library/Java/JavaVirtualMachines/zulu\x2d21\x2ejdk/Contents/Home
+SETUVAR --export PNPM_HOME:/Users/cpojer/Library/pnpm
+SETUVAR --export VISUAL:nvim
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/cpojer/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/cpojer/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/cpojer\x24
-SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr_am:git\x20amend
-SETUVAR _fish_abbr_c:code\x20\x2e
-SETUVAR _fish_abbr_g:git
-SETUVAR _fish_abbr_gbr:git\x20br
-SETUVAR _fish_abbr_gco:git\x20co
-SETUVAR _fish_abbr_gd:git\x20diff\x20\x2dw
-SETUVAR _fish_abbr_gds:git\x20diff\x20\x2dw\x20\x2d\x2dstaged
-SETUVAR _fish_abbr_glogf:git\x20logf
-SETUVAR _fish_abbr_glogo:git\x20logo
-SETUVAR _fish_abbr_gp:git\x20push\x20origin
-SETUVAR _fish_abbr_gpu:git\x20push\x20upstream
-SETUVAR _fish_abbr_gs:git\x20status
-SETUVAR _fish_abbr_l:ls\x20\x2dalh
-SETUVAR _fish_abbr_map:xargs\x20\x2dn1
-SETUVAR _fish_abbr_nsize:du\x20\x2dsh\x20\x2e/node_modules/\x2a\x20\x7c\x20sort\x20\x2dnr\x20\x7c\x20grep\x20\x22\x5cdM\x2e\x2a\x22
-SETUVAR _fish_abbr_o:open
-SETUVAR _fish_abbr_p:pnpm
-SETUVAR fish_color_autosuggestion:555\x1ebrblack
-SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:blue
-SETUVAR fish_color_comment:red
-SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:green
-SETUVAR fish_color_error:brred
-SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR fish_color_host:normal
-SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_normal:normal
-SETUVAR fish_color_param:cyan
-SETUVAR fish_color_quote:yellow
-SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_status:red
-SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR __fish_initialized:4300
+SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x233
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_meaningful_2D_ooo_2F_sponge_files:\x7e/\x2econfig/fish/functions/_sponge_clear_state\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_exit\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_postexec\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_preexec\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_remove_from_history\x2efish\x1e\x7e/\x2econfig/fish/functions/sponge_filter_failed\x2efish\x1e\x7e/\x2econfig/fish/functions/sponge_filter_matched\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/sponge\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emeaningful\x2dooo/sponge
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_key_bindings:fish_default_key_bindings
-SETUVAR fish_pager_color_completion:normal
-SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
-SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/Applications/Ghostty\x2eapp/Contents/MacOS
+SETUVAR sponge_allow_previously_successful:true
+SETUVAR sponge_delay:10
+SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
+SETUVAR sponge_purge_only_on_exit:false
+SETUVAR sponge_regex_patterns:\x1d
+SETUVAR sponge_successful_exit_codes:0

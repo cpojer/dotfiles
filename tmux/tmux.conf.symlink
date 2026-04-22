@@ -1,0 +1,17 @@
+set -g mouse on
+set -g history-limit 100000
+set -g set-clipboard on
+set -g detach-on-destroy off
+set -g renumber-windows on
+set -g focus-events on
+set -sg escape-time 10
+
+set -g status-position bottom
+set -g status-style "bg=default,fg=default"
+set -g status-left-length 40
+set -g status-right-length 80
+set -g status-left "#S"
+set -g status-right "#[fg=colour8]%Y-%m-%d %H:%M"
+
+setw -g automatic-rename on
+setw -g aggressive-resize on

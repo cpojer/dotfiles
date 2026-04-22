@@ -7,3 +7,6 @@ keybind = global:ctrl+y=toggle_visibility
 macos-titlebar-style = tabs
 shell-integration-features = no-cursor
 theme = light:Licht,dark:Dunkel
+window-width = 95
+window-height = 36
+window-save-state = never
