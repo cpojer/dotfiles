@@ -1,4 +1,5 @@
 {
+  "workbench.experimental.modernUI": false,
   "AllAutocomplete.updateOnlyOnSave": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.folding": false,
@@ -191,4 +192,5 @@
   "editor.inlineSuggest.edits.renderSideBySide": "never",
   "github.copilot.nextEditSuggestions.enabled": false,
   "github.copilot.nextEditSuggestions.fixes": false,
+  "extensions.ignoreRecommendations": true,
 }
