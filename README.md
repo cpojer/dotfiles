@@ -9,3 +9,5 @@ Check out [The Perfect Development Environment](https://cpojer.net/posts/the-per
 ## Install
 
 - `./setup`
+
+Prisma (`prisma.prisma`) and rust-analyzer (`rust-lang.rust-analyzer`) are optional VS Code extensions, omitted from the default install. Install either when needed, disable it globally, and choose **Enable (Workspace)** in projects that use it.
